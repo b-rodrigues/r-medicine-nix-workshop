@@ -1,2 +1,1 @@
-Repository avec le contenu de ma présentation pour le réseau de la recherche
-reproductible
+Repository for my workshop for R/Medicine 2025 I gave on the 13th of June 2025.
