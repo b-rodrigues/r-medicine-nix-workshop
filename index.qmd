@@ -150,7 +150,35 @@ renv2nix(
 
 # Part 2: Reproducible analytical pipelines with `{rixpress}`
 
-## Introduction
+## Introduction (1/3)
+
+- Nix is actually more than just a mere package manager
+- Nix is complete end-to-end build tool that leverages functional programming
+  principles to ensure reproducible builds
+- Users write Nix expressions which are then translated into Nix derivations
+- Derivation: *a specification for running an executable on precisely defined
+  input files to repeatably produce output files at uniquely determined file
+  system paths.*
+  ([source](https://nix.dev/manual/nix/2.25/language/derivations))
+
+## Introduction (2/3)
+
+- Essentially: a derivation is a recipe with precisely defined inputs, steps,
+  and a fixed output.
+- Given identical inputs and build steps → always produce exact same output
+- All inputs to a derivation must be explicitly declared.
+- Inputs include not just data files, but also software dependencies,
+  configuration flags, and environment variables, essentially anything necessary
+  for the build process.
+- The build process takes place in a *hermetic* sandbox to ensure the exact same
+  output is always produced.
+
+## Introduction (3/3)
+
+- `{rix}`: output is a *shell* that contains required software
+- `{rixpress}`: output is whatever is the output of your pipeline (cleaned
+  dataset, Quarto/Rmd document, model predictions, model parameters/weights,
+  model itself...)
 
 ## rixpress
 
@@ -158,9 +186,10 @@ renv2nix(
 - Uses `{rix}` to create a reproducible (via Nix) execution environment for the
   pipeline
 - Each pipeline step is a **Nix derivation**
-- Data transfer: automatic via `reticulate` or universal format (JSON)
+- Data transfer: automatic via `reticulate` or universal format (CSV, JSON,
+  Parquet...)
 
-## An example of a mixed pipeline
+## An example of a polyglot pipeline
 
 ```r
 list(
@@ -177,6 +206,61 @@ list(
 
 - Each step is named and typed (`py`, `r`, `r2py`, etc.)
 - Ability to add files (`functions.R`, images…)
+
+## Defining a derivation (input data)
+
+```r
+rxp_r_file(
+  name = mtcars,
+  path = 'data/mtcars.csv',
+  read_function = \(x) (read.csv(file = x, sep = "|"))
+)
+```
+
+## Defining a derivation (some computation)
+
+```r
+rxp_r(
+  name = filtered_mtcars,
+  expr = filter(mtcars, am == 1)
+)
+```
+
+## Typical structure of a rixpress project
+
+```
+.
+├── data
+│   └── dataset.csv    # input data (can be many files)
+├── functions.py       # user-defined Python functions
+├── functions.R        # user-defined R function
+├── gen-env.R          # rix script to generate execution env
+├── gen-pipeline.R     # rixpress script to generate pipeline
+├── my_paper           # folder containing Quarto doc
+│   ├── section.qmd    # Qmd file
+│   ├── images         # Folder containing images for document
+│   │   └── graph.png  # Image to add to paper
+│   └── main.qmd       # Main Qmd file
+└── Readme.md          # Readme
+```
+
+## Defining Quarto or Rmd documents
+
+Use `rxp_read()` to include pipeline outputs:
+
+```r
+rixpress::rxp_read("mtcars_head")
+```
+
+All created objects can be dynamically loaded into the document
+
+Possible to include additional files (`content.qmd`, images…)
+
+## Using rixpress
+
+- Write code in `gen-pipeline.R` and build pipeline using `rxp_make()`
+- Inspect outputs using `rxp_inspect()`
+- View outputs using `rxp_read()` (load them using `rxp_load()`
 
 ## Transfer with JSON (or other universal format)
 
@@ -203,23 +287,9 @@ rxp_r(
 )
 ```
 
-## Document generation (Quarto or Rmd)
+## Interactive demo
 
-- Easily integrate pipeline output into a `.qmd`:
-
-. . .
-
-````qmd
-```r
-rixpress::rxp_read("mtcars_head")
-```
-````
-
-. . .
-
-- All created objects can be dynamically loaded into the document
-
-- Possible to include additional files (`content.qmd`, images…)
+See `scripts/rixpress_demo`
 
 ## To learn more:
 
