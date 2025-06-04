@@ -5,9 +5,11 @@ rix(
   r_pkgs = c(
     "chronicler",
     "dplyr",
+    "ggdag",
     "igraph",
+    "quarto",
     "reticulate",
-    "quarto"
+    "visNetwork"
   ),
   git_pkgs = list(
     list(
@@ -24,9 +26,7 @@ rix(
   py_conf = list(
     py_version = "3.13",
     py_pkgs = c(
-      "pandas",
-      "polars",
-      "pyarrow"
+      "polars"
     )
   ),
   ide = "none",

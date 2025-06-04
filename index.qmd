@@ -258,9 +258,24 @@ Possible to include additional files (`content.qmd`, images…)
 
 ## Using rixpress
 
-- Write code in `gen-pipeline.R` and build pipeline using `rxp_make()`
-- Inspect outputs using `rxp_inspect()`
-- View outputs using `rxp_read()` (load them using `rxp_load()`
+- Start from an empty folder;
+- Drop into a temporary shell: `nix-shell --expr "$(curl -sl
+  https://raw.githubusercontent.com/ropensci/rix/main/inst/extdata/default.nix)"`;
+- Start project structure using `rixpress::rxp_init()`;
+- Edit `gen-env.R` and `gen-pipeline.R`;
+- Write code in `gen-pipeline.R` and build pipeline using `rxp_make()`;
+- Inspect outputs using `rxp_inspect()`;
+- View outputs using `rxp_read()` (load them using `rxp_load()`;
+- View DAG of pipeline using `rxp_ggdag()` or `rxp_visnetwork()`
+
+## Using rixpress
+
+- Build artifacts get saved and re-used across runs;
+- Possible to export and import them using `import_nix_archive()` and
+  `export_nix_archive()` (very useful on CI!);
+- To set up GitHub Actions use `rxp_ga()`;
+- Logs of runs get saved, and possible to reload older versions of build
+  artifacts (see [vignette](https://b-rodrigues.github.io/rixpress/articles/g-logs.html)).
 
 ## Transfer with JSON (or other universal format)
 
@@ -294,19 +309,19 @@ See `scripts/rixpress_demo`
 ## To learn more:
 
 - [Repository GitHub](https://github.com/b-rodrigues/rixpress)
-- [Site web](https://b-rodrigues.github.io/rixpress/)
-- [Repository d’exemples](https://github.com/b-rodrigues/rixpress_demos)
+- [Website](https://b-rodrigues.github.io/rixpress/)
+- [Repository of demos](https://github.com/b-rodrigues/rixpress_demos)
 
 ## Fin
 
 If you have questions:
 
 - bruno@brodrigues.co
-- Twitter : [@brodriguesco](https://x.com/brodriguesco)
-- Mastodon : [@brodriguesco@fosstodon.org](https://fosstodon.org/@brodriguesco)
-- Blog : [www.brodrigues.co](https://brodrigues.co/)
-- Livre : [www.raps-with-r.dev](https://raps-with-r.dev/)
-- rix : [https://docs.ropensci.org/rix](https://docs.ropensci.org/rix)
-- rixpress : [https://b-rodrigues.github.io/rixpress/](https://b-rodrigues.github.io/rixpress/)
+- Twitter: [@brodriguesco](https://x.com/brodriguesco)
+- Mastodon: [@brodriguesco@fosstodon.org](https://fosstodon.org/@brodriguesco)
+- Blog: [www.brodrigues.co](https://brodrigues.co/)
+- Book: [www.raps-with-r.dev](https://raps-with-r.dev/)
+- rix: [https://docs.ropensci.org/rix](https://docs.ropensci.org/rix)
+- rixpress: [https://b-rodrigues.github.io/rixpress/](https://b-rodrigues.github.io/rixpress/)
 
 Thanks!
