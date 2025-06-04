@@ -1,5 +1,5 @@
 ---
-title: "Reproducible environments for data science with {rix}"
+title: "Reproducible environments and pipelines with `{rix}` and `{rixpress}`"
 author: "Bruno Rodrigues"
 format:
   revealjs:
@@ -37,6 +37,8 @@ Code available here:
 - Identify *what* needs to be mastered to ensure reproducibility
   (ability to obtain *exactly* the same results from an analysis)
 - Briefly introduce Nix, `{rix}`, and `{rixpress}`
+
+# Part 1: Reproducible environments for data science with {rix}
 
 ## Available solutions for R (1/2)
 
@@ -146,7 +148,11 @@ renv2nix(
 - GitHub Actions: [see
   here](https://github.com/b-rodrigues/rix_paper/tree/master)
 
-## Polyglot pipelines with `{rixpress}`
+# Part 2: Reproducible analytical pipelines with `{rixpress}`
+
+## Introduction
+
+## rixpress
 
 - `{rixpress}` allows chaining processing steps in R **and** Python
 - Uses `{rix}` to create a reproducible (via Nix) execution environment for the
