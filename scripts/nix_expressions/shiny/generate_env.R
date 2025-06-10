@@ -1,7 +1,7 @@
 library(rix)
 
 rix(
-  r_ver = "4.2.2",
+  date = "2025-06-09",
   r_pkgs = "shiny",
   ide = "none",
   project_path = ".",
