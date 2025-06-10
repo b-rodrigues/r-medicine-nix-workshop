@@ -30,8 +30,12 @@ object.
      ```bash
      nix-shell --expr "$(curl -sl https://raw.githubusercontent.com/ropensci/rix/main/inst/extdata/default.nix)"
      ```
-   - Inside this shell, start R and execute: ```r source("gen-env.R") ``` This
-     command generates the `default.nix` file.
+   - Inside this shell, start R and execute: 
+     ```r 
+	 source("gen-env.R") 
+	 ``` 
+	 
+	 This command generates the `default.nix` file.
 
 2. **Enter the Generated Environment:**
    - Exit the temporary shell (using CTRL-D or by typing `exit`)
@@ -74,6 +78,3 @@ object.
      `browseURL()` to open it in your web browser. You can also use
      `rxp_copy("page")` to copy the contents of the folder to your working
      directory, to make it more easily accessible.
-
-Take a look at the `.github/workflows/run_python_r.yaml` file to see how this
-pipeline is build and executed on Github Actions.
