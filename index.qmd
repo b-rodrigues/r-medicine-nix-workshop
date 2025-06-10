@@ -38,6 +38,18 @@ Code available here:
   (ability to obtain *exactly* the same results from an analysis)
 - Briefly introduce Nix, `{rix}`, and `{rixpress}`
 
+## This workshop in a nutshell
+
+The reproducibility puzzle you know
+
+![](images/repro_puzzle.png){fig-align="center"}
+
+## This workshop in a nutshell
+
+The reproducibility puzzle with Nix
+
+![](images/repro_puzzle_nix.png){fig-align="center"}
+
 # Part 1: Reproducible environments for data science with {rix}
 
 ## Available solutions for R (1/2)
