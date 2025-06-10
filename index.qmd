@@ -153,11 +153,11 @@ renv2nix(
 
 ## Demo
 
-- Basics: `scripts/nix_expressions/rix_intro/`
-- Native Code/Positron on Windows: `scripts/nix_expressions/native_vscode_example/`
-- Nix and `{targets}`: `scripts/nix_expressions/nix_targets_pipeline`
-- Nix and Docker: `scripts/nix_expressions/docker/`
-- Nix and `{shiny}`: `scripts/nix_expressions/shiny`
+- Basics: `scripts/nix_expressions/01_rix_intro/`
+- Native Code/Positron on Windows: `scripts/nix_expressions/02_native_vscode_example/`
+- Nix and `{targets}`: `scripts/nix_expressions/03_nix_targets_pipeline`
+- Nix and Docker: `scripts/nix_expressions/04_docker/`
+- Nix and `{shiny}`: `scripts/nix_expressions/05_shiny`
 - GitHub Actions: [see
   here](https://github.com/b-rodrigues/rix_paper/tree/master)
 
@@ -269,11 +269,19 @@ All created objects can be dynamically loaded into the document
 
 Possible to include additional files (`content.qmd`, images…)
 
-## Using rixpress
+## Using rixpress (1/3)
 
 - Start from an empty folder;
-- Drop into a temporary shell: `nix-shell --expr "$(curl -sl
-  https://raw.githubusercontent.com/ropensci/rix/main/inst/extdata/default.nix)"`;
+- Drop into a temporary shell: 
+
+. . . 
+
+```bash
+nix-shell --expr "$(curl -sl https://raw.githubusercontent.com/ropensci/rix/main/inst/extdata/default.nix)"
+```
+
+## Using rixpress (2/3)
+
 - Start project structure using `rixpress::rxp_init()`;
 - Edit `gen-env.R` and `gen-pipeline.R`;
 - Write code in `gen-pipeline.R` and build pipeline using `rxp_make()`;
@@ -281,7 +289,7 @@ Possible to include additional files (`content.qmd`, images…)
 - View outputs using `rxp_read()` (load them using `rxp_load()`;
 - View DAG of pipeline using `rxp_ggdag()` or `rxp_visnetwork()`
 
-## Using rixpress
+## Using rixpress (3/3)
 
 - Build artifacts get saved and re-used across runs;
 - Possible to export and import them using `import_nix_archive()` and
