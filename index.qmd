@@ -144,7 +144,7 @@ renv2nix(
 - Basics: `scripts/nix_expressions/rix_intro/`
 - Nix and `{targets}`: `scripts/nix_expressions/nix_targets_pipeline`
 - Nix and Docker: `scripts/nix_expressions/docker/`
-- Nix and `{shiny}`: `scripts/nix_expression/shiny`
+- Nix and `{shiny}`: `scripts/nix_expressions/shiny`
 - GitHub Actions: [see
   here](https://github.com/b-rodrigues/rix_paper/tree/master)
 
