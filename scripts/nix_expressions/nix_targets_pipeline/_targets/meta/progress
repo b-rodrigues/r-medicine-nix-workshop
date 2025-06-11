@@ -1,0 +1,13 @@
+name|type|parent|branches|progress
+commune_level_data|stem|commune_level_data|0|started
+commune_level_data|stem|commune_level_data|0|built
+country_level_data|stem|country_level_data|0|started
+country_level_data|stem|country_level_data|0|built
+communes|stem|communes|0|started
+communes|stem|communes|0|built
+commune_data|stem|commune_data|0|started
+commune_data|stem|commune_data|0|built
+country_data|stem|country_data|0|started
+country_data|stem|country_data|0|built
+analyse_data|stem|analyse_data|0|started
+analyse_data|stem|analyse_data|0|built
