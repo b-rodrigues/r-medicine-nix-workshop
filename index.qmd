@@ -48,9 +48,33 @@ highlight-style: rstudio_default-light.theme
 Bruno Rodrigues, head of the statistics department at the Ministry of Research
 and Higher Education in Luxembourg
 
-## Intro: Who am I
+## Intro: Luxembourg?
 
 ![](img/luxembourg.png){fig-align="center"}
+
+## Intro: Luxembourg?
+
+![](img/luxembourg2.png){fig-align="center"}
+
+## Intro: Luxembourg?
+
+<table style="width: 100%;">
+  <tr>
+    <td style="width: 472px; vertical-align: top;">
+      <img src="img/grand_duke.jpg" alt="HRH Grand Duke Henri" style="width: 100%; max-width: 150px;">
+    </td>
+    <td style="vertical-align: top;">
+      <ul>
+        <li>Recognized as an independent state in 1839 via the Treaty of London</li>
+        <li>Constitutional monarchy ruled by a Grand Duke (head of state)</li>
+        <li>The Prime Minister serves as head of government</li>
+        <li>One of the founding members of the European Union</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
 
 ## Intro: Who am I
 
