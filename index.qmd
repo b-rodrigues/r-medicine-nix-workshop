@@ -75,8 +75,7 @@ and Higher Education in Luxembourg
 </table>
 
 
-
-## Intro: Who am I
+## Intro: where to find the code
 
 Slides available online:
 
