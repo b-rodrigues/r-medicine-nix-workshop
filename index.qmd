@@ -87,9 +87,19 @@ Code available here:
 
 ## What I’ll talk about
 
-- Identify *what* needs to be mastered to ensure reproducibility
-  (ability to obtain *exactly* the same results from an analysis)
-- Briefly introduce Nix, `{rix}`, and `{rixpress}`
+- Nix, the package manager
+
+. . . 
+
+- Nix, the programming language
+
+. . . 
+
+- Nix, the complete end-to-end build tool
+
+. . .
+
+- How `{rix}` and `{rixpress}` can help you
 
 ## This workshop in a nutshell
 
