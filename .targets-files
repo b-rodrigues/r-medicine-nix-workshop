@@ -3,9 +3,11 @@
 .quarto/project-cache/5df0bf07ec558e693a389ba1a23ecd0f
 .quarto/project-cache/bf5b60f8e59b047f99413e09fb957aba
 .quarto/project-cache/deno-kv-file
+.quarto/xref/24da16f9
 .quarto/xref/99eebb05
 .quarto/xref/INDEX
 .targets-files
+.targets-runs/
 _targets/.gitignore
 _targets/meta/meta
 _targets/meta/process
