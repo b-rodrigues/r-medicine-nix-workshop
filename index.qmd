@@ -61,7 +61,7 @@ and Higher Education in Luxembourg
 <table style="width: 100%;">
   <tr>
     <td style="width: 472px; vertical-align: top;">
-      <img src="img/grand_duke.jpg" alt="HRH Grand Duke Henri" style="width: 100%; max-width: 150px;">
+      <img src="img/grand_duke.jpg" alt="HRH Grand Duke Henri" style="width: 100%; max-width: 472px;">
     </td>
     <td style="vertical-align: top;">
       <ul>
