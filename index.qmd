@@ -88,8 +88,17 @@ Code available here:
 ## What I’ll talk about
 
 - Nix, the package manager
+
+. . . 
+
 - Nix, the programming language
+
+. . . 
+
 - Nix, the complete end-to-end build tool
+
+. . .
+
 - How `{rix}` and `{rixpress}` can help you
 
 ## This workshop in a nutshell
