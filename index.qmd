@@ -122,12 +122,14 @@ A popular package manager:
 
 ## rix: reproducible development environments with Nix (1/5)
 
-`{rix}` ([website](https://docs.ropensci.org/rix/)) simplifies writing Nix
+- `{rix}` ([website](https://docs.ropensci.org/rix/)) simplifies writing Nix
   expressions!
 
-Just use the provided `rix()` function:
+- Just use the provided `rix()` function:
 
-```{r, eval = FALSE}
+. . .
+
+```r
 library(rix)
 
 rix(date = "2025-06-02",
@@ -141,9 +143,11 @@ rix(date = "2025-06-02",
 
 ## rix: reproducible development environments with Nix (2/5)
 
-`renv.lock` files can also serve as a starting point:
+- `renv.lock` files can also serve as a starting point:
 
-```{r, eval = FALSE}
+. . .
+
+```r
 library(rix)
 
 renv2nix(
@@ -298,8 +302,10 @@ Possible to include additional files (`content.qmd`, img…)
 
 ## Using rixpress (1/3)
 
-Start from an empty folder;
-Drop into a temporary shell:
+- Start from an empty folder;
+- Drop into a temporary shell:
+
+. . .
 
 ```bash
 nix-shell --expr "$(curl -sl https://raw.githubusercontent.com/ropensci/rix/main/inst/extdata/default.nix)"
@@ -333,6 +339,8 @@ def serialize_to_json(pl_df, path):
     with open(path, 'w') as f:
         f.write(pl_df.write_json())
 ```
+
+. . .
 
 - And on the R side:
 
