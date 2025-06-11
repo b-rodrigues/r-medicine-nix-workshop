@@ -1,16 +1,46 @@
 ---
 title: "Reproducible environments and pipelines with `{rix}` and `{rixpress}`"
-author: "Bruno Rodrigues"
+author:
+  - name: "Bruno Rodrigues"
+    affiliation:
+      - "Ministry of Research and Higher education"
+date: last-modified
+date-format: "June 06, 2025"
 format:
   revealjs:
-    embed-resources: true
-    slide-number: true
-    theme: solarized
-    incremental: true
-  pptx:
-    freeze: true
-execute:
-  echo: true
+    theme:
+      - default
+      - slides.scss
+    title-slide-attributes:
+      data-background-image: "img/rmed_background.png"
+      data-background-size: cover
+      data-background-opacity: "50"
+    fontsize: 2em
+    html-math-method: mathjax
+    slide-number: c/t
+    show-slide-number: all
+    highlight-style: rstudio_default-light.theme
+    logo: "img/rmed.png"
+    footer: "[Slides are here](https://b-rodrigues.github.io/r-medicine-nix-workshop){target='_blank'}"  # complete the URL
+    include-after-body: "img/clean_title_page.html"
+include-in-header:
+  text: |
+    <link rel="shortcut icon" href="img/rmed.ico"/>
+embed-resources: true
+knitr:
+  opts_chunk:      ########## set global options ############
+    collapse: true # keep code from blocks together (if shown)
+    echo: false    # don't show code
+    message: true  # show messages
+    warning: true  # show warnings
+    error: true    # show error messages
+    comment: ""    # don't show ## with printed output
+    R.options:   
+      digits: 3    # round to three digits
+editor_options:
+  chunk_output_type: console
+editor: source
+highlight-style: rstudio_default-light.theme
 ---
 
 ## Intro: Who am I
@@ -20,7 +50,7 @@ and Higher Education in Luxembourg
 
 ## Intro: Who am I
 
-![](images/luxembourg.png){fig-align="center"}
+![](img/luxembourg.png){fig-align="center"}
 
 ## Intro: Who am I
 
@@ -42,13 +72,13 @@ Code available here:
 
 The reproducibility puzzle you know
 
-![](images/repro_puzzle.png){fig-align="center"}
+![](img/repro_puzzle.png){fig-align="center"}
 
 ## This workshop in a nutshell
 
 The reproducibility puzzle with Nix
 
-![](images/repro_puzzle_nix.png){fig-align="center"}
+![](img/repro_puzzle_nix.png){fig-align="center"}
 
 # Part 1: Reproducible environments for data science with {rix}
 
@@ -60,7 +90,7 @@ The reproducibility puzzle with Nix
 
 - Docker goes further:
   - Manages R *and* system dependencies
-  - Uses immutable and shareable images
+  - Uses immutable and shareable img
   - Containers executable anywhere
 
 ## Available solutions for R (2/2)
@@ -68,7 +98,7 @@ The reproducibility puzzle with Nix
 - Docker limitations:
   - Learning curve (Linux knowledge recommended)
   - Not originally designed for reproducibility
-  - See: [Rocker](https://rocker-project.org/images/versioned/r-ver.html)
+  - See: [Rocker](https://rocker-project.org/img/versioned/r-ver.html)
 
 ## The Nix package manager (1/2)
 
@@ -80,7 +110,7 @@ A popular package manager:
 
 . . .
 
-![Google Play Store](images/play_store.png)
+![Google Play Store](img/play_store.png)
 
 ## The Nix package manager (2/2)
 
@@ -218,7 +248,7 @@ list(
 ```
 
 - Each step is named and typed (`py`, `r`, `r2py`, etc.)
-- Ability to add files (`functions.R`, images…)
+- Ability to add files (`functions.R`, img…)
 
 ## Defining a derivation (input data)
 
@@ -251,7 +281,7 @@ rxp_r(
 ├── gen-pipeline.R     # rixpress script to generate pipeline
 ├── my_paper           # folder containing Quarto doc
 │   ├── section.qmd    # Qmd file
-│   ├── images         # Folder containing images for document
+│   ├── img         # Folder containing img for document
 │   │   └── graph.png  # Image to add to paper
 │   └── main.qmd       # Main Qmd file
 └── Readme.md          # Readme
@@ -267,7 +297,7 @@ rixpress::rxp_read("mtcars_head")
 
 All created objects can be dynamically loaded into the document
 
-Possible to include additional files (`content.qmd`, images…)
+Possible to include additional files (`content.qmd`, img…)
 
 ## Using rixpress (1/3)
 
